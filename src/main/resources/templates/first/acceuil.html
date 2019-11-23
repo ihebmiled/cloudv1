@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/Style.css}"/>
+</head>
+<body>
+<h1 align=center>Page d'acceuil</h1>
+
+<h1 th:text="${#strings.capitalize(msg)}"></h1>
+<h2 th:text="${msg1}"></h2>
+
+<ul>
+<li th:text=${(ec)}>Votre ecole est</li>
+<li th:text=${(forma)}> intitulé formation</li>
+</ul>
+
+<ul th:each="name : ${names}">
+ <li th:text="${name}"></li>
+</ul>
+
+<ul th:each="animal : ${animals}">
+<li>
+<p>
+	<SPAN th:text="${animal.nom}"></SPAN>
+	<SPAN th:text="${animal.age}"></SPAN>
+</p>
+</li>
+</ul>
+</body>
+</html>
